@@ -8,6 +8,17 @@ struct Planar
   virtual ~Planar() = default;
 };
 
+struct Paint: Planar
+{
+  virtual int x() const;
+  virtual int y() const;
+  virtual int abs_sqr(0 const;
+  Paint(int xx, int yy);
+  virtual ~Paint() = default;
+private:
+  int data[2];
+};
+
 Planar* make(std::istream& is);
 Planar* mostleft(Planar** pls, size_t k);
 Planar* make(size_t pl);
@@ -40,12 +51,16 @@ int main()
 }
 Planar* make(size_t pl)
 {
-  switch(pl)
+  Planar* r = nullptr;
+  switch(id)
   {
+    case 0:
+      r = new Point(0, 0);
+      break;
     default:
       throw std::logic_error("bad id");
   }
-  return nullptr;
+  return r;
 }
 
 void free_planars(Planar** pls, size_t k)
@@ -61,4 +76,24 @@ void draw(Planar* pl)
   std::cout << pl->x();
   std::cout << " ";
   std::cout << pl->y() << "\n";
+}
+
+Point::Point(int xx, int yy):
+  Planar(),
+  data{xx, yy}
+{}
+
+int Point::x() const
+{
+  return data[0];
+}
+
+int Point::y() const
+{
+  return data[1];
+}
+
+int Point::abs_sqr() const
+{
+  return x()*x() + y()*y();
 }
