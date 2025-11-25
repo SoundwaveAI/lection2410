@@ -2,6 +2,7 @@
 #include "Planar.hpp"
 #include "Point.hpp"
 #include "Vector.hpp"
+#include "functions.hpp"
 
 int main()
 {

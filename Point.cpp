@@ -1,6 +1,6 @@
 #include "Point.hpp"
 
-Point::PointPoint::Point(int xx, int yy):
+Point::Point(int xx, int yy):
   Planar(),
   data{xx, yy}
 {}
