@@ -53,7 +53,21 @@ void draw(Planar* pl)
   std::cout << pl->y() << "\n";
 }
 
-Planar* mostleft(Planar** pls, size_t k)
+Planar** mostleft(Planar** pls, size_t k)
 {
-  return nullptr;
+  if (!k)
+  {
+    return pls;
+  }
+  Planar** res = pls;
+  while (--k)
+  {
+    int next_x = (*(++pls)) -> x();
+    int curr_x = (*res) -> x();
+    if (next_x < curr_x)
+    {
+      res = pls;
+    }
+  }
+  return res;
 }

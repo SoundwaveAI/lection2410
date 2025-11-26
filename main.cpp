@@ -41,7 +41,16 @@ int main()
     delete[] pls;
     return 3;
   }
-  //draw(mostleft(pls, k));
-  //Planar* left = mostleft(pls, k);
-  // draw(left);
+  Planar** ml = mostleft(pls, s);
+  if (ml == pls + s)
+  {
+    std::cout << "Not found";
+    free_planars(pls, s);
+    delete[] pls;
+    return 0;
+  }
+  draw(*ml);
+  std::cout << "\n";
+  free_planars(pls, s);
+  delete[] pl;
 }
