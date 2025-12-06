@@ -15,7 +15,7 @@ Planar** mostleft(Planar** pls, size_t k);
 void draw(Planar* pl);
 void free_planars(Planar** pls, size_t k);
 Planar* max_area(Planar** pls, size_t k);
-Planar max_frame_sects(Planar** pls, size_t k);
+PlanarPair max_frame_sects(Planar** pls, size_t k);
 
 #endif
 

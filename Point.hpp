@@ -4,6 +4,8 @@
 
 struct Point: Planar
 {
+  Point(): data{0, 0}
+  {}
   Point(int xx, int yy);
   virtual int x() const;
   virtual int y() const;

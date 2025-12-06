@@ -61,7 +61,7 @@ int main()
   }
   else
   {
-    std::cout << "No section" << "\n'";
+    std::cout << "No section" << "\n";
   }
   free_planars(pls, count);
   delete[] pls;

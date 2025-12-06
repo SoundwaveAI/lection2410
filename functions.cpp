@@ -14,14 +14,14 @@ Planar* make(std::istream& is)
     throw std::logic_error("EOF");
   }
   int data[4] = {};
-  if (cmd[0] == "P" && cmd[1] == "T")
+  if (cmd[0] == 'P' && cmd[1] == 'T')
   {
     if (is >> data[0] >> data[1])
     {
       return new  Point(data[0], data[1]);
     }
   }
-  else if (cmd[0] == "V" && cmd[1] == "T")
+  else if (cmd[0] == 'V' && cmd[1] == 'T')
   {
     if (is >> data[0] >> data[1] >> data[2] >> data[3])
     {
@@ -42,7 +42,7 @@ void free_planars(Planar** pls, size_t k)
 {
   for (size_t i = 0; i < k; ++i)
   {
-    delete[] pls[i];
+    delete pls[i];
   }
 }
 
@@ -51,7 +51,6 @@ void draw(Planar* pl)
   if (pl)
   {
     pl->print();
-    std::cout << "\n";
   }
 }
 
@@ -114,7 +113,7 @@ PlanarPair max_frame_sects(Planar** pls, size_t k)
   {
     for (size_t j = i + 1; j < k; ++j)
     {
-      long long current_s = section_area(pls[i]->frame(), pls[j]->frame());
+      long long current_s = intersection_area(pls[i]->frame(), pls[j]->frame());
       if (current_s > max_s)
       {
         max_s = current_s;
