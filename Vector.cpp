@@ -1,4 +1,5 @@
 #include "Vector.hpp"
+#include <iostream>
 #include <algorithm>
 
 Vector::Vector(Point begin, Point end):
@@ -37,4 +38,9 @@ frame_t Vector::frame() const
     {std::min(x1,x2), std::min(y1,y2)},
     {std::max(x1,x2), std::max(y1,y2)}
   };
+}
+
+void Vector::print() const
+{
+  std::cout << "Vector [" << data[0].x() << ";" << data[0].y() << " - " << data[1].x() << ";" << data[1].y() << "]" << "\n";
 }

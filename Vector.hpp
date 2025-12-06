@@ -11,6 +11,7 @@ struct Vector: Planar
   virtual int abs_sqr() const;
   virtual double area() const override;
   virtual frame_t frame() const override;
+  virtual void print() const override;
   virtual ~Vector() = default;
 private:
   Point data[2];
