@@ -8,7 +8,7 @@ struct PlanarPair
 {
   Planar* fir;
   Planar* sec;
-;}
+};
 
 Planar* make(std::istream& is);
 Planar** mostleft(Planar** pls, size_t k);
