@@ -1,4 +1,5 @@
 #include "Vector.hpp"
+#include <algorithm>
 
 Vector::Vector(Point begin, Point end):
   Planar(),
@@ -19,4 +20,21 @@ int Vector::abs_sqr() const
 {
  return x()*x() + y()*y();
 }
- 
+
+double Vector::area() const
+{
+  return 0.0;
+}
+
+frame_t Vector::frame() const
+{
+  int x1 = data[0].x();
+  int y1 = data[0].y();
+  int x2 = data[1].x();
+  int y2 = data[1].y();
+  return
+  {
+    {std::min(x1,x2), std::min(y1,y2)},
+    {std::max(x1,x2), std::max(y1,y2)}
+  };
+}
